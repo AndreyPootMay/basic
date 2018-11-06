@@ -55,8 +55,7 @@ class CountryController extends Controller
     {
         $searchModel = new CitiesSearch();
         $searchModel->country_code = $id;
-        $codeCo = $this->findModel($id)->code;
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $codeCo);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('view', [
             'dataProvider' => $dataProvider,
