@@ -5,7 +5,6 @@ namespace app\controllers;
 use Yii;
 use app\models\Country;
 use app\models\CountrySearch;
-use app\models\Cities;
 use app\models\CitiesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

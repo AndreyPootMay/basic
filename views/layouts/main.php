@@ -46,8 +46,8 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $items[] = ['label' => 'Login', 'url' => ['/site/login']];   
     } else {
-        $items[] = ['label' => 'Ciudades', 'url' => ['/cities/index']];
         $items[] = ['label' => 'Paises', 'url' => ['/country/index']];
+        $items[] = ['label' => 'Ciudades', 'url' => ['/cities/index']];
         $items[] =
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
