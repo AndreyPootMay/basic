@@ -43,8 +43,8 @@ class Cities extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'country_code' => Yii::t('app', 'Country Code'),
-            'name' => Yii::t('app', 'Name'),
+            'country_code' => Yii::t('app', 'Código del país'),
+            'name' => Yii::t('app', 'Nombre'),
         ];
     }
 
