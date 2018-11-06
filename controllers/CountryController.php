@@ -5,6 +5,8 @@ namespace app\controllers;
 use Yii;
 use app\models\Country;
 use app\models\CountrySearch;
+use app\models\Cities;
+use app\models\CitiesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -52,7 +54,13 @@ class CountryController extends Controller
      */
     public function actionView($id)
     {
+        $searchModel = new CitiesSearch();
+        $searchModel->country_code = $id;
+        $codeCo = $this->findModel($id)->code;
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $codeCo);
+
         return $this->render('view', [
+            'dataProvider' => $dataProvider,
             'model' => $this->findModel($id),
         ]);
     }
